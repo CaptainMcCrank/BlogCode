@@ -8,6 +8,30 @@
 #
 # Exit codes: 0 = all tests passed (sandbox is secure), non-zero = vulnerabilities found
 
+# Run this script with the following command: 
+# bwrap      --ro-bind /usr /usr \
+# --ro-bind /lib /lib \
+# --ro-bind /lib64 /lib64 \
+# --ro-bind /bin /bin \     
+# --ro-bind /etc/resolv.conf /etc/resolv.conf \
+# --ro-bind /etc/hosts /etc/hosts \
+# --ro-bind /etc/ssl /etc/ssl \
+# --ro-bind /etc/passwd /etc/passwd \     
+# --ro-bind /etc/group /etc/group \
+# --ro-bind "$HOME/.gitconfig" "$HOME/.gitconfig" \
+# --ro-bind "$HOME/.nvm" "$HOME/.nvm" \
+# --bind "$PROJECT_DIR" "$PROJECT_DIR" \
+# --bind "$HOME/.claude" "$HOME/.claude" \
+# --tmpfs /tmp \
+# --proc /proc \      
+# --dev /dev \ 
+# --share-net \
+# --unshare-pid \
+# --die-with-parent \
+# --chdir "$PROJECT_DIR" \
+# bash ./sandbox-escape-test.sh
+
+
 set -u
 
 RED='\033[0;31m'
