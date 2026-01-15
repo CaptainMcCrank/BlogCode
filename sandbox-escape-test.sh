@@ -8,7 +8,9 @@
 #
 # Exit codes: 0 = all tests passed (sandbox is secure), non-zero = vulnerabilities found
 
-# Run this script with the following command: 
+# Run this script with the following command, which creates the bubblewrap jail, invokes bash and then executes the test script, which 
+# helps you determine if the controls are working:
+
 # bwrap      --ro-bind /usr /usr \
 # --ro-bind /lib /lib \
 # --ro-bind /lib64 /lib64 \
